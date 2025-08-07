@@ -1,0 +1,8 @@
+adafruit-io==2.8.0
+certifi==2025.7.14
+charset-normalizer==3.4.2
+idna==3.10
+paho-mqtt==2.1.0
+requests==2.32.4
+setuptools==80.9.0
+urllib3==2.5.0

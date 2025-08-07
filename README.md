@@ -1,3 +1,4 @@
+<<<<<<< HEAD
 # Elastic Beanstalk CLI Installer
 - [1. Overview](#1-overview)
   - [1.1. Prerequisites](#11-prerequisites)
@@ -214,3 +215,6 @@ Suppose the dependencies of `eb`, say `Dep A` and `Dep B`, are in conflict. Beca
 ## 6. License
 
 This library is licensed under the Apache-2.0 License.
+=======
+# beargrass-analytics
+>>>>>>> 7d30c4a5f0e1f69ba33fe83bee9f1373fad88118
