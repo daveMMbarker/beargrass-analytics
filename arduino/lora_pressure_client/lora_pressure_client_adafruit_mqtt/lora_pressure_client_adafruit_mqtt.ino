@@ -158,7 +158,7 @@ void setup() {
   client.setCACert(adafruitio_root_ca);
 
   mqtt = new Adafruit_MQTT_Client(&client, AIO_SERVER, AIO_SERVERPORT, aio_username.c_str(), aio_key.c_str());
-  beargrass = new Adafruit_MQTT_Publish(mqtt, (aio_username + "/feeds/beargrass").c_str());
+  beargrass = new Adafruit_MQTT_Publish(mqtt, "davebarker/feeds/beargrass");
 }
 
 void loop() {
