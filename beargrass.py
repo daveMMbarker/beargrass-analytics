@@ -102,6 +102,16 @@ def connected(client):
     client.subscribe(ADAFRUIT_IO_FEED_ID)
 
 def disconnected(client):
+    print("Disconnected from Adafruit IO. Attempting to reconnect...")
+    while True:
+        try:
+            time.sleep(5)  # wait before retry
+            client.connect()
+            client.subscribe(ADAFRUIT_IO_FEED_ID)
+            print("Reconnected to Adafruit IO.")
+            return
+        except Exception as e:
+            print(f"Reconnect failed: {e}. Retrying in 5 seconds...")
     print("Disconnected from Adafruit IO.")
 
 def message(client, feed_id, payload):
@@ -123,6 +133,8 @@ def main():
         print("         export ADAFRUIT_IO_KEY='your_key'")
         return
 
+    print(f"AIO USER:{ADAFRUIT_IO_USERNAME}")
+    print(f"AIO KEY:{ADAFRUIT_IO_KEY}")
     try:
         # Create an MQTT client instance for Adafruit IO
         client = MQTTClient(ADAFRUIT_IO_USERNAME, ADAFRUIT_IO_KEY)
